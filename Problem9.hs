@@ -1,13 +1,7 @@
-checkTriplet (a, b, c) = (a**2 + b**2 == c**2) && 
-					 (a < b) && 
-					 (b < c) &&
-					 (a + b + c) == 1000
+triplets l = [[a,b,c] | m <- [2..l],
+                        n <- [1..(m-1)], 
+                        let a = m^2 - n^2, 
+                        let b = 2*m*n, 
+                        let c = m^2 + n^2,
+                        a+b+c==l]
 
-combinations n = [(a, b, c) | a <- [1..n], 
-							  b <- [1..n], 
-							  c <- [1..n]]
-
-
-unpacker (a, b, c) f = f a b c
-
-main = print $ filter checkTriplet (combinations 1000) 
