@@ -11,7 +11,7 @@ forty-two) contains 23 letters and 115 (one hundred and fifteen) contains
 with British usage. 
 -}
 
-main = print $ sum $ map nl [1..1000]
+main = print $ sum $ map nl [1..1000000]
 
 hundred = 7
 and' = 3
